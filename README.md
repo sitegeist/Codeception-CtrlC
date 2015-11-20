@@ -1,6 +1,9 @@
 # Codeception-CtrlC
 Codeception module that allows safe abortion of a run by pressing `Ctrl+C`
 
+This module will make sure that any cleanup that take place during a test tear-down will not be interrupted due to the
+user pressing Ctrl+C.
+
 # Installation
 
 ```
