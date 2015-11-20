@@ -1,6 +1,6 @@
 {
   "name": "natterbox/codeception-ctrlc",
-  "description": "Allows safe abortion a run by pressing `Ctrl+C`",
+  "description": "Allows safe abortion of a run by pressing `Ctrl+C`",
   "type": "library",
   "require": {
     "php": ">=5.4.0",
