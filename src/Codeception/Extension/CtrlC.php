@@ -5,7 +5,7 @@
 
 namespace Codeception\Extension;
 
-use Codeception\Exception\TestRuntime as TestRuntimeException;
+use Codeception\Exception\TestRuntimeException;
 use Codeception\Module;
 use Codeception\Step;
 use Codeception\TestCase;
@@ -139,7 +139,7 @@ class CtrlC extends Module
     // @codingStandardsIgnoreLine overridden function from \Codeception\Module
     public function _beforeStep(Step $step)
     {
-        $this->debug(__CLASS__.'::_beforeStep '.$step->getHumanizedAction());
+        $this->debug(__CLASS__.'::_beforeStep '.$step->getHumanizedActionWithoutArguments());
 
         // if there was an interruption; fail the step
         $this->failOnInterruption();
@@ -154,7 +154,7 @@ class CtrlC extends Module
     // @codingStandardsIgnoreLine overridden function from \Codeception\Module
     public function _afterStep(Step $step)
     {
-        $this->debug(__CLASS__.'::_afterStep '.$step->getHumanizedAction());
+        $this->debug(__CLASS__.'::_afterStep '.$step->getHumanizedActionWithoutArguments());
 
         // if there was an interruption; fail the step
         $this->failOnInterruption();
