@@ -38,7 +38,7 @@ class CtrlC extends Module
      *
      * @param $message
      */
-    protected function showMessage($message)
+    private function showMessage($message)
     {
         file_put_contents(
             'php://stdout',
@@ -53,7 +53,7 @@ class CtrlC extends Module
     /**
      * Initialise signals
      */
-    public function initSignalHandler()
+    private function initSignalHandler()
     {
         $this->debug(__CLASS__.'::initSignalHandler +++++++');
 
@@ -76,7 +76,7 @@ class CtrlC extends Module
     /**
      * De-initialise signals
      */
-    public function deinitSignalHandler()
+    private function deinitSignalHandler()
     {
         $this->debug(__CLASS__.'::deinitSignalHandler ------');
 
@@ -96,6 +96,16 @@ class CtrlC extends Module
             $this->terminate = null;
             throw new TestRuntimeException("Test interrupted by signal {$this->terminateSignal}");
         }
+    }
+
+    /**
+     * Tells whether the current test run was interrupted
+     *
+     * @return bool true if test run was interrupted
+     */
+    public function amNotInterrupted()
+    {
+        return $this->terminate !== true;
     }
 
     /**
