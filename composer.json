@@ -1,0 +1,23 @@
+{
+  "name": "natterbox/codeception-ctrlc",
+  "description": "Allows safe abortion a run by pressing `Ctrl+C`",
+  "type": "library",
+  "require": {
+    "php": ">=5.4.0",
+    "ext-pcntl": "*",
+    "codeception/codeception": "~2.0.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "dino.korah",
+      "email": "dino@redmatter.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Codeception\\Extension\\": "src/Codeception/Extension/"
+    }
+  }
+}
